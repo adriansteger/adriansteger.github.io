@@ -4161,6 +4161,7 @@ input, select, textarea {
 		background: rgba(2,0,36,0.1);
 		/* background: linear-gradient(90deg, rgba(2,0,36,0.05) 0%, rgba(9,9,121,0.05) 35%, rgba(0,212,255,0.05) 100%); */
 		border-radius: 7px;
+		padding-right: 10px;
 	}
 	.technologies::before {
 		content: "Technologies: ";
