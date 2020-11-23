@@ -4169,25 +4169,41 @@ input, select, textarea {
 		padding-left: 10px;
 		
 	}
-	.youtube, .github {
+	.youtube, .github, .play {
 		color: white;
 		text-decoration: none;
 		display: block;
 		border-bottom: none;
 	}
-	.youtube::before, .github::before {
-		content: url(./images/YouTube_23392.png);
+	.youtube::before, .github::before, .play::before {
+		background-image: url(./images/YouTube_23392.png);
+		background-size: 32px 32px;
+		display: inline-block;
+		content: "";
 		align-content: center;
 		vertical-align: middle;
-		padding: 10px;
+		margin: 5px;
+		/* image size */
+		height: 32px;
+		width: 32px;
+
 	}
 	.github::before {
-		content: url(./images/github-logo_icon-icons.com_73546.png);
+		background-image: url(./images/github-logo_icon-icons.com_73546.png);
 	}
-	.youtube:hover, .github:hover {
+	.play::before {
+		background-image: url(./images/video-game-play-pad-boy-gameboy-nintendo_108539.png);
+	}
+	.youtube:hover, .github:hover, .play:hover {
 		text-decoration: underline;
 	}
 	#about p{
 		text-transform: none;
 		letter-spacing: normal;
+	}
+	ul.right{
+		direction: rtl;
+		display: block;
+		position: relative;
+		padding-right: 3%;
 	}
