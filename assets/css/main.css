@@ -4207,3 +4207,6 @@ input, select, textarea {
 		position: relative;
 		padding-right: 3%;
 	}
+	section#about>div.inner img{
+		height: 64px;
+	}
