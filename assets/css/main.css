@@ -4162,20 +4162,19 @@ input, select, textarea {
 		/* background: linear-gradient(90deg, rgba(2,0,36,0.05) 0%, rgba(9,9,121,0.05) 35%, rgba(0,212,255,0.05) 100%); */
 		border-radius: 7px;
 		padding-right: 10px;
+		padding-left: 10px;
 	}
 	.technologies::before {
 		content: "Technologies: ";
-		color: rgb(90, 130, 240);
-		padding-left: 10px;
-		
+		color: rgb(90, 130, 240);		
 	}
-	.youtube, .github, .play {
+	.youtube, .github, .play, .netflix {
 		color: white;
 		text-decoration: none;
 		display: block;
 		border-bottom: none;
 	}
-	.youtube::before, .github::before, .play::before {
+	.youtube::before, .github::before, .play::before, .netflix::before {
 		background-image: url(./images/YouTube_23392.png);
 		background-size: 32px 32px;
 		display: inline-block;
@@ -4196,6 +4195,9 @@ input, select, textarea {
 	}
 	.youtube:hover, .github:hover, .play:hover {
 		text-decoration: underline;
+	}
+	.netflix::before {
+		background-image: url(./images/netflix_logo_icon_170919.png);
 	}
 	#about p{
 		text-transform: none;
