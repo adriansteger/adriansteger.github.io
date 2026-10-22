@@ -1,357 +1,1025 @@
-<!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="de">
 
 <head>
-	<title>Portfolio von Adrian Steger</title>
-	<meta name="robots" content="noindex" /><!-- This site should never get indexed anywhere -->
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" />
-	</noscript>
-	<script type="text/javascript" src="./index.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <title>Adrian Steger | Fullstack Software Developer & Founder</title>
+  <meta name="description"
+    content="Portfolio von Adrian Steger - Fullstack Software Developer & Gründer mit Schwerpunkt auf .NET (C#, .NET Core, Azure Functions), PHP und modernem Frontend (React, TypeScript)." />
+
+  <!-- Social Preview (Open Graph / Twitter) -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Adrian Steger | Fullstack Software Developer & Founder" />
+  <meta property="og:description"
+    content="Fullstack Software Developer mit Schwerpunkt .NET (C#, Azure Functions), PHP und React/TypeScript – Zürich & Remote." />
+  <meta property="og:url" content="https://adriansteger.github.io/" />
+  <meta property="og:image" content="https://adriansteger.github.io/images/adrian-profile.jpg" />
+  <meta property="og:locale" content="de_CH" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+
+  <!-- Apply saved / preferred theme before first paint to avoid flashing -->
+  <script>
+    (function () {
+      var theme;
+      try { theme = localStorage.getItem('adrian_portfolio_theme'); } catch (e) { }
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
-<body class="is-preload">
+<body>
 
-	<!-- Page Wrapper -->
-	<div id="page-wrapper">
+  <a href="#main-content" class="skip-link" data-i18n="skip_link">Zum Inhalt springen</a>
 
-		<!-- Header -->
-		<header id="header" class="alt">
-			<h1><a href="index.html">Portfolio von Adrian Steger</a></h1>
-			<nav>
-				<a href="#menu">Menu</a>
-			</nav>
-		</header>
+  <!-- ========================================================================
+       SITE HEADER / NAVIGATION
+       ======================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-wrapper">
+      <a href="#hero" class="brand-logo" aria-label="Adrian Steger Portfolio">
+        <span>AS<span class="gradient-text">.dev</span></span>
+        <span class="brand-badge">Fullstack</span>
+      </a>
 
-		<!-- Menu -->
-		<nav id="menu">
-			<div class="inner">
-				<h2>Menu</h2>
-				<ul class="links">
-					<li><a href="#banner">Start</a></li>
-					<li><a href="#about">Über mich</a></li>
-					<li><a href="#techtuning">Techtuning</a></li>
-					<li><a href="#diepizzaitalia">Die Pizza Italia</a></li>
-					<li><a href="#gplltd">GPS LTD</a></li>
-					<li><a href="#msrecords">MS Records</a></li>
-					<li><a href="#augenblick">Augenblick-<br />Autovermietung</a></li>
-					<li><a href="#projects">Projekte</a></li>
-					<li><a href="#footer">Kontakt</a></li>
-					<!-- <li><a href="generic.html">Generic</a></li>
-					<li><a href="elements.html">Elements</a></li>
-					<li><a href="#">Log In</a></li>
-					<li><a href="#">Sign Up</a></li> -->
-				</ul>
-				<!-- <a href="#" class="close">Close</a> -->
-			</div>
-		</nav>
+      <!-- Desktop & Mobile Nav Links -->
+      <nav aria-label="Hauptnavigation" data-i18n-attr="aria-label:aria_nav">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#hero" class="nav-link active" data-i18n="nav_about">Über mich</a></li>
+          <li><a href="#projects" class="nav-link" data-i18n="nav_projects">Projekte</a></li>
+          <li><a href="#experience" class="nav-link" data-i18n="nav_experience">Werdegang</a></li>
+          <li><a href="#skills" class="nav-link" data-i18n="nav_skills">Skills & Tech</a></li>
+          <li><a href="#education" class="nav-link" data-i18n="nav_edu">Ausbildung</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Kontakt</a></li>
+        </ul>
+      </nav>
 
-		<!-- Banner -->
-		<section id="banner">
-			<div class="inner">
-				<!-- <div class="logo"><span class="icon fa-gem"></span></div> -->
-				<h2>Portfolio von Adrian Steger</h2>
-				<p>Web-Developer & Designer</p>
-				<section id="about">
-					<div class="inner">
-						<h2>Über mich</h2>
-						<p>
-							Hallo mein Name ist Adrian Steger.<br />
-							Ich bin ein passionierter Web-Entwickler mit Erfahrung in Frontend wie auch Backend
-							Technologien.<br />
-							<br />
-							Software Entwicklung begeistert mich wegen den unbegrenzten Möglichkeiten, welche uns
-							Technologie bringt.<br />
-							Gestartet mit C und C++ landete ich in der Web-Entwicklung - Es wurde zu einer grossen
-							Passion.<br />
-							Der Gedanke heute besser als gestern zu sein treibt mich voran und hilft mir mich zu
-							verbessern.<br />
-							<br />
-							Momentan suche ich nach einer Möglichkeit mich in einer Technologie weiter zu
-							vertiefen.<br />
-							Wenn ich nicht gerade eine App entwickle, dann bereise ich mit meiner Freundin die Schweiz,
-							esse Pizza und spiele Fussball. <br />
-							Aktuell befinde ich mich auf der Suche nach einer Festanstellung. <br />
-							<br />
-							Bitte kontaktieren Sie mich hier:
-						<ul class="actions">
-							<li><a href="#footer" class="button">Kontakt</a></li>
-						</ul><br />
-						</p>
-						<!-- <p>
-							Hello, my name is Adrian Steger.<br />
-							I'm a web developer who's passionate about frontend and backend development.<br />
-							<br />
-							Being a developer inspires me because of the infinite possibilities that technology brings
-							to us.<br />
-							Starting out with C and C++ i ended up in web-development - It really became a
-							big passion.<br />
-							My Idea of being a better me today than yesterday keeps me moving forward and improving
-							myself.<br />
-							<br />
-							I'm currently looking for an opportunity to work with a JavaScript framework.<br />
-							When I'm not building apps, you can find me travelling around Switzerland with my
-							girlfriend, eating Pizza and playing soccer. <br />
-							If you would like to learn more about me, feel free to visit my contact section.<br />
-						</p> -->
+      <div class="nav-actions">
+        <!-- Theme Toggle Switcher (Dark / Light) -->
+        <button type="button" class="theme-toggle-btn" id="theme-toggle" aria-label="Design umschalten (Dark/Light)"
+          data-i18n-attr="aria-label:aria_theme">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
 
-						<h2>Skills:</h2>
-						<h3>Programmier- und Skript-Sprachen</h3>
-						<p>
-							<img src="images/icons/4202122html5logosocialsocialmediawebsite-115696_115605.png" alt="">
-							<img src="images/icons/4202020css3htmllogosocialsocialmedia-115668_115633.png" alt="">
-							<img src="images/icons/sass_original_logo_icon_146350.png" alt="">
-							<img src="images/icons/file_type_js_icon_130510.png" alt="">
-							<img src="images/icons/php_icon_130857.png" alt="">
-							<img src="images/icons/csharp_original_logo_icon_146578.png" alt="">
-							<img src="images/icons/python_original_logo_icon_146381.png" alt="">
-						</p>
-						<h3>Frameworks & Bibliotheken</h3>
-						<p>
-							<img src="images/icons/react_original_logo_icon_146374.png" alt="">
-							<img src="images/icons/bootstrap_plain_logo_icon_146619.png" alt="">
-							<img src="images/icons/materialize-seeklogo.com.svg" alt="">
-							<img src="images/icons/jquery_original_wordmark_logo_icon_146447.png" alt="">
-						</p>
-						<h3>Content Management Systeme</h3>
-						<p>
-							<img src="images/icons/Wordpress_icon-icons.com_66780.png" alt="">
-							<img src="images/icons/social_joomla_88.png" alt="">
-						</p>
-						<h3>Extensions & Compilers</h3>
-						<p>
-							<img src="images/icons/jsx_icon_132288.png" alt="">
-							<img src="images/icons/file_type_light_babel_icon_130478.png" alt="">
-						</p>
-						<h3>Linux</h3>
-						<p>
-							<img src="images/icons/bash_36261.png" alt="">
-							<img src="images/icons/apache_original_wordmark_logo_icon_146643.png" alt="">
-							<img src="images/icons/ssh_original_wordmark_logo_icon_146335.png" alt="">
-							<img src="images/icons/file_type_nginx_icon_130305.png" alt="">
-							<img src="images/icons/plesk_logo_icon_144976.png" alt="">
-						</p>
-						<h3>Software</h3>
-						<p>
-							<img src="images/icons/file_type_node_icon_130301.png" alt="">
-							<img src="images/icons/file_type_sql_icon_130152.png" alt="">
-							<img src="images/icons/git_original_wordmark_logo_icon_146510.png" alt="">
-							<img src="images/icons/npm_original_wordmark_logo_icon_146402.png" alt="">
-							<img src="images/icons/file_type_photoshop_icon_130268.png" alt="">
-						</p>
-						<p>
+        <!-- Language Switcher (DE / EN) -->
+        <div class="lang-switcher" role="group" aria-label="Sprachauswahl" data-i18n-attr="aria-label:aria_lang">
+          <button type="button" class="lang-btn active" data-lang="de" aria-label="Deutsch"
+            aria-pressed="true">DE</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-label="English" aria-pressed="false">EN</button>
+        </div>
 
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" class="mobile-menu-btn" aria-label="Menü öffnen" aria-expanded="false"
+          aria-controls="nav-links" data-i18n-attr="aria-label:aria_menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-							<!-- <img src="images/icons/file_type_gatsby_icon_130583.png" alt=""> -->
+  <main id="main-content">
 
+    <!-- ========================================================================
+       HERO SECTION
+       ======================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <!-- Status Pill -->
+          <div class="status-badge">
+            <span class="pulse-dot"></span>
+            <span data-i18n="hero_status">Offen für Festanstellungen in Zürich & Remote</span>
+          </div>
 
-						</p>
+          <h1 class="hero-title">
+            <span data-i18n="hero_greeting">Hallo, ich bin</span><br />
+            <span class="gradient-text">Adrian Steger</span>
+          </h1>
 
+          <div class="hero-role" data-i18n="hero_role">
+            Fullstack Software-Developer & Gründer
+          </div>
 
-					</div>
-				</section>
-			</div>
-		</section>
+          <p class="hero-bio" data-i18n="hero_bio">
+            Vielseitiger Software-Entwickler mit Schwerpunkt auf modernen .NET-Technologien (C#, .NET Core, Azure
+            Functions), PHP und Frontend-Frameworks (React, TypeScript). Nachgewiesene Erfolge in agiler Entwicklung,
+            Systemarchitektur und Einführung moderner Workflows (Docker, KI).
+          </p>
 
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              <span data-i18n="hero_btn_projects">Projekte ansehen</span>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span data-i18n="hero_btn_contact">Kontakt aufnehmen</span>
+            </a>
+            <a href="https://github.com/adriansteger" target="_blank" rel="noopener noreferrer" class="btn btn-ghost"
+              aria-label="GitHub Profil">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/adrian-steger" target="_blank" rel="noopener noreferrer"
+              class="btn btn-ghost" aria-label="LinkedIn Profil">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
 
-		<!-- Wrapper -->
-		<section id="wrapper">
+          <div class="hero-tags">
+            <span class="tech-pill">C# / .NET 8</span>
+            <span class="tech-pill">PHP</span>
+            <span class="tech-pill">React & TS</span>
+            <span class="tech-pill">Azure Functions</span>
+            <span class="tech-pill">Supabase & Postgres</span>
+            <span class="tech-pill">Docker</span>
+            <span class="tech-pill">MSSQL</span>
+          </div>
+        </div>
 
-			<!-- Techtuning -->
-			<section id="techtuning" class="wrapper spotlight style1">
-				<div class="inner">
-					<a href="#" class="image"><img src="images/techtuning.png" alt="" /></a>
-					<div class="content">
-						<h2 class="major">Techtuning</h2>
+        <!-- Avatar & Floating Badges -->
+        <div class="hero-visual">
+          <div class="avatar-wrapper">
+            <div class="avatar-inner">
+              <picture>
+                <source srcset="images/adrian-profile.webp" type="image/webp" />
+                <img src="images/adrian-profile.jpg" alt="Adrian Steger" class="avatar-img" width="720" height="720"
+                  fetchpriority="high" />
+              </picture>
+            </div>
 
-						<p>
-						<ul class="right">
-							<li>Webseite mit Online Shop basierend auf Woocommerce</li>
-							<li>Spezielle Produktauswahl: Marke->Modell->Jahrgang->Treibstoff</li>
-							<li>Scraper für Bezug von RAW-Daten</li>
-							<li>Parser um Daten in das richtige Format für den Online-Shop zu parsen</li>
-							<li>Komplettes Webdesign entsprechend Corporate Identity</li>
-							<li>Suchfunktion mit Filterung nach Marke, Modell und Treibstoffart</li>
-						</ul>
+            <!-- Floating Badges -->
+            <div class="floating-badge badge-top">
+              <div class="badge-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 18l6-6-6-6"></path>
+                  <path d="M8 6l-6 6 6 6"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="badge-label" data-i18n="hero_badge_exp_label">Erfahrung</div>
+                <div class="badge-val" data-i18n="hero_badge_exp_val">12+ Jahre Dev</div>
+              </div>
+            </div>
 
-						</p>
-						<p class="technologies">Wordpress, Woocommerce, PHP, JavaScript, jQuery, HTML5, CSS3</p>
-						<a href="https://techtuning.ch" class="special" target="none">Zur Webseite</a>
-					</div>
-				</div>
-			</section>
+            <div class="floating-badge badge-bottom">
+              <div class="badge-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="badge-label" data-i18n="hero_badge_focus_label">Schwerpunkt</div>
+                <div class="badge-val" data-i18n="hero_badge_focus_val">.NET, PHP &amp; React</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-			<!-- Die Pizza Italia -->
-			<section id="diepizzaitalia" class="wrapper alt spotlight style2">
-				<div class="inner">
-					<a href="#" class="image"><img src="images/Die-Pizza-Italia.png" alt="" /></a>
-					<div class="content">
-						<h2 class="major">Die Pizza Italia</h2>
-						<p>
-						<ul>
-							<li>Corporate Identity</li>
-							<li>Webdesign</li>
-							<li>Logo Design</li>
-							<li>Flyer, Visitenkarten, Plakate</li>
-						</ul>
-						</p>
-						<p class="technologies">Wordpress, JavaScript, HTML5, CSS3, PHP</p>
-						<a href="https://diepizzaitalia.ch" class="special">Zur Webseite</a>
-					</div>
-				</div>
-			</section>
+    <!-- ========================================================================
+       IMPACT METRICS SECTION
+       ======================================================================== -->
+    <section class="metrics-section">
+      <div class="container">
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-number" data-i18n="metric_1_num">12+</div>
+            <div class="metric-label" data-i18n="metric_1_lbl">Jahre Web- & Software-Entwicklung (seit 2012)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number" data-i18n="metric_2_num">-22%</div>
+            <div class="metric-label" data-i18n="metric_2_lbl">SMS-Betriebskosten gesenkt (Careanesth)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number" data-i18n="metric_3_num">6k+</div>
+            <div class="metric-label" data-i18n="metric_3_lbl">Fahrzeugdaten automatisiert (Ascotech)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number" data-i18n="metric_4_num">SaaS</div>
+            <div class="metric-label" data-i18n="metric_4_lbl">Job-CRM Resumate.ch gegründet & gebaut</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-			<!-- Global Playground Supplies LTD -->
-			<section id="gplltd" class="wrapper spotlight style3">
-				<div class="inner">
-					<a href="#" class="image"><img src="images/Global-Playground-Supplies-LTD.png" alt="" /></a>
-					<div class="content">
-						<h2 class="major">Global Playground Supplies LTD</h2>
-						<ul class="right">
-							<li>Corporate Identity</li>
-							<li>Logo Design</li>
-							<li>Cover für Diplomarbeit</li>
-						</ul>
-						<!-- <p>Im Auftrag von Herrn Dema wurde eine Corporate Identity geschaffen, anhand derer ein Logo und
-							ein Cover für eine Diplomarbeit erstellt wurden.</p> -->
-						<!-- <a href="#gplltd" class="special">Bald gibt es hier mehr zu sehen</a> -->
-						<!-- <blockquote>"Die Zusammenarbeit mit Herrn Steger war hervorragend. Er ist auf all meine Wünsche
-								genauestens eingegangen und hat sogar
-								interaktiv seine eigenen Ideen präsentiert. Ich bin mit dem Ergebnis sehr zufrieden und bin
-								von der Spontanität und Flexibilität sehr positiv überrascht!"</blockquote> -->
-					</div>
-				</div>
-			</section>
-			<section id="msrecords" class="wrapper alt spotlight style4">
-				<div class="inner">
-					<a href="#" class="image"><img src="images/MS-Records.png" alt="" /></a>
-					<div class="content">
-						<h2 class="major">MS Records</h2>
-						<ul>
-							<li>Corporate Identity</li>
-							<li>Web Design</li>
-							<li>Logo Design</li>
-							<li>Grafik Design</li>
-							<li>Werbematerialien</li>
-						</ul>
-						<!-- <p>Für MS Records wurden eine Corporate Identity, Logo, eine Webseite und diverse
-							Werbematerialien erstellt.</p> -->
-						<p class="technologies">Wordpress, JavaScript, HTML5, CSS3, PHP</p>
-						<a href="https://msrecords.ch" class="special">Zur Webseite</a>
-					</div>
-				</div>
-			</section>
-			<section id="augenblick" class="wrapper spotlight style5">
-				<div class="inner">
-					<a href="#" class="image"><img src="images/Augenblick-Autovermietung.png" alt="" /></a>
-					<div class="content">
-						<h2 class="major">Augenblick Autovermietung</h2>
-						<ul class="right">
-							<li>Corporate Identity</li>
-							<li>Logo</li>
-							<li>Webseite</li>
-						</ul>
-						<p class="technologies">Wordpress, JavaScript, HTML5, CSS3, PHP</p>
-					</div>
-				</div>
-			</section>
+    <!-- ========================================================================
+       FEATURED PROJECTS / CASE STUDIES
+       ======================================================================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="sec_projects_tag">Showcase & Case Studies</span>
+          <h2 class="section-title" data-i18n="sec_projects_title">Ausgewählte Projekte</h2>
+          <p class="section-desc" data-i18n="sec_projects_desc">
+            Ein Einblick in aktuelle Produktentwicklungen, Enterprise-Architekturen und Automatisierungs-Systeme.
+          </p>
+        </div>
 
-			<!-- msrecords -->
-			<section id="projects" class="wrapper alt style1">
-				<div class="inner">
-					<h2 class="major">Projekte</h2>
-					<!-- <p>Einige meiner Projekte.</p> -->
-					<section class="features">
-						<article>
-							<a href="#" class="image"><img src="images/jumpingball.gif" alt="" /></a>
-							<h3 class="major">Jumpingball</h3>
-							<p>Ein kleines Spiel bei dem man den Ball durch klicks innerhalb der Box halten muss.<br />
-							<p class="technologies">JavaScript, HTML5, CSS3</p>
-							<a href="https://jumpingball.vernoh.com" class="play" target="_blank">Live Demo</a>
-							<a href="https://github.com/adriansteger/jumpingball" class="github" target="_blank">Github Link</a>
-							<a href="https://youtu.be/LhjCwfmkgxE" class="youtube" target="_blank">Youtube Link</a>
-							</p>
-						</article>
-						<article>
-							<a href="#" class="image" style="padding: 120px; background-color: black;"><img src="images/netflix_official_logo_icon_168085.png" alt="" /></a>
-							<h3 class="major">Netflix Klon</h3>
-							<p>
-								Ein auf React und Firebase basierender, voll responsiver Netflix Klon.
-							</p>
-							<p class="technologies">React, Firebase, JavaScript, HTML5, CSS3</p>
-							<a href="https://netflix-clone-aa889.web.app/" class="netflix" target="_blank">Live Demo</a>
-							<a href="https://github.com/adriansteger/netflix-clone" class="github" target="_blank">Github
-								Link</a>
-						</article>
-					</section>
-				</div>
-			</section>
+        <div class="projects-list">
+          <!-- 1. RESUMATE.CH -->
+          <article class="project-card">
+            <div class="project-media">
+              <img src="images/resumate.svg" alt="" class="project-img" width="640" height="400" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <div class="project-top">
+                <div class="project-meta-row">
+                  <span class="project-category" data-i18n="proj_resumate_cat">Eigenes SaaS / Job-CRM Platform</span>
+                  <span class="project-badge-live">
+                    <span class="pulse-dot"></span> <span data-i18n="badge_live">Live in Production</span>
+                  </span>
+                </div>
+                <h3 class="project-title" data-i18n="proj_resumate_title">Resumate.ch – Modernes Job-CRM & Matching</h3>
+                <p class="project-description" data-i18n="proj_resumate_desc">
+                  Eigenverantwortliche Konzeption, Architekturplanung und Fullstack-Entwicklung eines modernen Job-CRMs
+                  und Matchmaking-Portals für den Schweizer Arbeitsmarkt.
+                </p>
+                <ul class="project-highlights">
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span data-i18n="proj_resumate_f1">Reaktives Frontend mit React, TypeScript und intuitivem
+                      Talent-Pipeline-Management</span>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span data-i18n="proj_resumate_f2">Skalierbares Backend mit Node.js, Supabase, PostgreSQL &
+                      Row-Level-Security</span>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span data-i18n="proj_resumate_f3">Automatisierte Parser & Algorithmen zur Profil- und
+                      Stellenanzeigen-Analyse</span>
+                  </li>
+                </ul>
+              </div>
 
-		</section>
+              <div>
+                <div class="project-tech">
+                  <span class="skill-tag highlight">React</span>
+                  <span class="skill-tag highlight">TypeScript</span>
+                  <span class="skill-tag highlight">Node.js</span>
+                  <span class="skill-tag highlight">Supabase</span>
+                  <span class="skill-tag highlight">PostgreSQL</span>
+                  <span class="skill-tag">Tailwind CSS</span>
+                </div>
+                <div class="project-actions">
+                  <a href="https://resumate.ch" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span data-i18n="btn_visit_live">Live-Plattform öffnen</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
 
-		<!-- Footer -->
-		<section id="footer">
-			<div class="inner">
-				<h2 class="major">In Kontakt treten</h2>
-				<!-- <p>Haben Sie fragen an mich? Senden Sie mir einfach eine Nachricht über das unten stehende Kontaktformular.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form> -->
-				<ul class="contact">
-					<li class="icon solid fa-home">
-						Adrian Steger<br />
-						Urdorferstrasse 36A<br />
-						8952 Schlieren, Zürich
-					</li>
-					<li class="icon solid fa-phone"><a href="tel:+41 76 411 8952">076 411 8952</a></li>
-					<li class="icon solid fa-envelope"><a href="mailto:adrian.steger@gmx.ch">adrian.steger@gmx.ch</a>
-					</li>
-					<!--
-									<li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-									<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
-									<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
-								-->
-				</ul>
-				<ul class="copyright">
-					<li>&copy; 2021 Adrian Steger. All rights reserved.</li>
-				</ul>
-			</div>
-		</section>
+          <!-- 2. CAREANESTH AG -->
+          <article class="project-card reversed">
+            <div class="project-media">
+              <img src="images/careanesth.svg" alt="" class="project-img" width="640" height="400" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <div class="project-top">
+                <div class="project-meta-row">
+                  <span class="project-category" data-i18n="proj_careanesth_cat">Enterprise Platform & Healthcare
+                    Cloud</span>
+                </div>
+                <h3 class="project-title" data-i18n="proj_careanesth_title">Careanesth AG – Enterprise APIs,
+                  Integrationen & SMS-Engine</h3>
+                <p class="project-description" data-i18n="proj_careanesth_desc">
+                  Entwicklung und Wartung hochverfügbarer APIs, Parser und Fullstack-Anwendungen im agilen
+                  Scrum/Jira-Umfeld im Healthcare-Personalbereich.
+                </p>
+                <ul class="project-highlights">
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span data-i18n="proj_careanesth_f1">Entwicklung eines robusten SMS-Versandsystems mit
+                      Error-Handling (-22% Versandkosten)</span>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span data-i18n="proj_careanesth_f2">C#/.NET Core, Entity Framework, Azure Functions und
+                      PHP/ProcessWire mit MSSQL & MySQL</span>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span data-i18n="proj_careanesth_f4">Schnittstellen zu Buchungssystemen und SMS-Providern</span>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span data-i18n="proj_careanesth_f3">Proaktive Einführung moderner Technologien wie Docker, WSL2 und
+                      KI-Entwicklungs-Tools</span>
+                  </li>
+                </ul>
+              </div>
 
-	</div>
+              <div>
+                <div class="project-tech">
+                  <span class="skill-tag highlight">C#</span>
+                  <span class="skill-tag highlight">.NET Core</span>
+                  <span class="skill-tag highlight">Azure Functions</span>
+                  <span class="skill-tag highlight">PHP</span>
+                  <span class="skill-tag highlight">React</span>
+                  <span class="skill-tag highlight">Docker</span>
+                  <span class="skill-tag">Entity Framework</span>
+                  <span class="skill-tag">ProcessWire</span>
+                  <span class="skill-tag">MSSQL</span>
+                  <span class="skill-tag">Scrum / Jira</span>
+                </div>
+              </div>
+            </div>
+          </article>
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+          <!-- 3. ASCOTECH SCRAPER & AUTOMATION -->
+          <article class="project-card">
+            <div class="project-media">
+              <img src="images/ascotech.svg" alt="" class="project-img" width="640" height="400" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <div class="project-top">
+                <div class="project-meta-row">
+                  <span class="project-category" data-i18n="proj_ascotech_cat">Automatisierung & E-Commerce</span>
+                </div>
+                <h3 class="project-title" data-i18n="proj_ascotech_title">Ascotech – Web-Scraper & E-Commerce Engine
+                </h3>
+                <p class="project-description" data-i18n="proj_ascotech_desc">
+                  Entwicklung massgeschneiderter E-Commerce-Plattformen und hochperformanter Web-Scraper zur
+                  automatisierten Datenverarbeitung und Synchronisation.
+                </p>
+                <ul class="project-highlights">
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span data-i18n="proj_ascotech_f1">High-Throughput Parser zur automatisierten Verarbeitung von über
+                      6.000 Fahrzeugdatensätzen</span>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span data-i18n="proj_ascotech_f2">Custom REST APIs und Schnittstellen-Integration mit WordPress /
+                      WooCommerce</span>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span data-i18n="proj_ascotech_f3">Eigenverantwortliche Leitung von Kundenprojekten und Koordination
+                      externer Freelancer</span>
+                  </li>
+                </ul>
+              </div>
 
+              <div>
+                <div class="project-tech">
+                  <span class="skill-tag highlight">PHP</span>
+                  <span class="skill-tag highlight">Node.js</span>
+                  <span class="skill-tag highlight">Custom REST APIs</span>
+                  <span class="skill-tag">ETL Pipelines</span>
+                  <span class="skill-tag">WooCommerce</span>
+                  <span class="skill-tag">MySQL</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Secondary Projects -->
+        <div class="secondary-projects-grid">
+          <div class="sec-project-card">
+            <div>
+              <h4 class="sec-project-title" data-i18n="proj_techtuning_title">Techtuning.ch – E-Commerce & Konfigurator
+              </h4>
+              <p class="sec-project-desc" data-i18n="proj_techtuning_desc">
+                E-Commerce Plattform mit spezialisiertem 4-Stufen-Fahrzeugfilter (Marke, Modell, Jahrgang, Treibstoff)
+                und automatisiertem Datenbezug via Scraper.
+              </p>
+            </div>
+            <div class="project-tech">
+              <span class="skill-tag">WooCommerce</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Custom Filter</span>
+            </div>
+          </div>
+
+          <div class="sec-project-card">
+            <div>
+              <h4 class="sec-project-title" data-i18n="proj_client_title">Diverse Web- & KMU-Projekte</h4>
+              <p class="sec-project-desc" data-i18n="proj_client_desc">
+                Entwicklung responsiver Web-Präsenzen, Corporate Identities und massgeschneiderter E-Commerce-Lösungen
+                (u.a. Die Pizza Italia, GGF Getränke, MS Records).
+              </p>
+            </div>
+            <div class="project-tech">
+              <span class="skill-tag">Fullstack Web</span>
+              <span class="skill-tag">Corporate Identity</span>
+              <span class="skill-tag">Performance & Conversion</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       EXPERIENCE / CAREER TIMELINE
+       ======================================================================== -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="sec_exp_tag">Karriere & Erfahrung</span>
+          <h2 class="section-title" data-i18n="sec_exp_title">Beruflicher Werdegang</h2>
+          <p class="section-desc" data-i18n="sec_exp_desc">
+            Von der Fullstack-Entwicklung komplexer Enterprise-Systeme bis zum Aufbau eigener cloud-basierter
+            SaaS-Lösungen.
+          </p>
+        </div>
+
+        <div class="timeline-wrapper">
+          <!-- Role 1: Ascotech & Resumate -->
+          <div class="timeline-item">
+            <div class="timeline-dot current"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role" data-i18n="exp_role_1">Software-Developer & Gründer (Freelance)</h3>
+                  <div class="timeline-company" data-i18n="exp_company_1">Ascotech & Resumate.ch | Zürich</div>
+                </div>
+                <span class="timeline-date" data-i18n="exp_date_1">05/2025 – Heute</span>
+              </div>
+              <ul class="timeline-bullets">
+                <li data-i18n="exp_b1_1">Entwicklung und Architekturplanung des eigenen Job-CRMs (Resumate.ch) mit
+                  Node.js, React und Supabase.</li>
+                <li data-i18n="exp_b1_2">Umsetzung anspruchsvoller Kundenprojekte unter Nutzung von modernen
+                  Web-Technologien und PHP.</li>
+              </ul>
+              <div class="timeline-tech-row">
+                <span class="timeline-tech-label" data-i18n="tech_stack_label">Tech-Stack:</span>
+                <span class="skill-tag highlight">TypeScript</span>
+                <span class="skill-tag highlight">React</span>
+                <span class="skill-tag highlight">Node.js</span>
+                <span class="skill-tag highlight">Supabase</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">PHP</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 2: Careanesth AG -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role" data-i18n="exp_role_2">Full-Stack-Entwickler</h3>
+                  <div class="timeline-company" data-i18n="exp_company_2">Careanesth AG | Zürich</div>
+                </div>
+                <span class="timeline-date" data-i18n="exp_date_2">10/2021 – 05/2025</span>
+              </div>
+              <ul class="timeline-bullets">
+                <li data-i18n="exp_b2_1">Entwicklung und Wartung von APIs, Parsern und Fullstack-Anwendungen im agilen
+                  Umfeld (Scrum/Jira).</li>
+                <li data-i18n="exp_b2_2">Entwicklung eines robusten SMS-Versandsystems inklusive Error-Handling, wodurch
+                  die SMS-Kosten um 22% gesenkt wurden.</li>
+                <li data-i18n="exp_b2_3">Proaktive Einführung moderner Technologien (Docker, WSL, KI-Tools), um
+                  Architektur und Workflows zukunftssicher aufzustellen.</li>
+                <li data-i18n="exp_b2_4">Entwicklung von Schnittstellen zu Drittsystemen wie Buchungssystemen und
+                  SMS-Providern.</li>
+                <li data-i18n="exp_b2_5">Code-Reviews, technische Dokumentation sowie Mitgestaltung der technischen
+                  Planung neuer Projekte und Best Practices.</li>
+                <li data-i18n="exp_b2_6">Unterstützung des 2nd-Level-Supports mit aktiver Fehleranalyse und -behebung.
+                </li>
+              </ul>
+              <div class="timeline-tech-row">
+                <span class="timeline-tech-label" data-i18n="tech_stack_label">Tech-Stack:</span>
+                <span class="skill-tag highlight">C#</span>
+                <span class="skill-tag highlight">.NET Core</span>
+                <span class="skill-tag highlight">Entity Framework</span>
+                <span class="skill-tag highlight">Azure Functions</span>
+                <span class="skill-tag highlight">PHP</span>
+                <span class="skill-tag highlight">React</span>
+                <span class="skill-tag highlight">Docker</span>
+                <span class="skill-tag">MSSQL</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">ProcessWire</span>
+                <span class="skill-tag">Ionic</span>
+                <span class="skill-tag">AngularJS</span>
+                <span class="skill-tag">WSL2</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 3: Freelance & Weiterbildung -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role" data-i18n="exp_role_3">Freelance-Tätigkeit & Weiterbildung</h3>
+                  <div class="timeline-company" data-i18n="exp_company_3">Selbstständig | Zürich</div>
+                </div>
+                <span class="timeline-date" data-i18n="exp_date_3">05/2020 – 10/2021</span>
+              </div>
+              <ul class="timeline-bullets">
+                <li data-i18n="exp_b3_1">Umsetzung diverser Freelance-Projekte (PHP, JavaScript, Node.js, C#).</li>
+                <li data-i18n="exp_b3_2">Intensives Selbststudium und Vertiefung aktueller Web- und
+                  Framework-Technologien.</li>
+              </ul>
+              <div class="timeline-tech-row">
+                <span class="timeline-tech-label" data-i18n="tech_stack_label">Tech-Stack:</span>
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">JavaScript (ES6+)</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">C#</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 4: Ascotech Multimedia LTD -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role" data-i18n="exp_role_4">CEO & Web-Developer</h3>
+                  <div class="timeline-company" data-i18n="exp_company_4">Ascotech Multimedia LTD | Schlieren</div>
+                </div>
+                <span class="timeline-date" data-i18n="exp_date_4">12/2016 – 05/2020</span>
+              </div>
+              <ul class="timeline-bullets">
+                <li data-i18n="exp_b4_1">Entwicklung komplexer E-Commerce-Plattformen, massgeschneiderter APIs sowie
+                  eigener Plugins und Themes.</li>
+                <li data-i18n="exp_b4_2">Programmierung eines leistungsstarken Web-Scrapers/Parsers zur automatisierten
+                  Verarbeitung von über 6.000 Fahrzeugdatensätzen.</li>
+                <li data-i18n="exp_b4_3">Eigenverantwortliche Leitung von Kundenprojekten und erfolgreiche Koordination
+                  externer Freelancer.</li>
+              </ul>
+              <div class="timeline-tech-row">
+                <span class="timeline-tech-label" data-i18n="tech_stack_label">Tech-Stack:</span>
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">WordPress</span>
+                <span class="skill-tag">C#</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 5: GGF Getränke -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role" data-i18n="exp_role_5">Webmaster & Social Media Specialist</h3>
+                  <div class="timeline-company" data-i18n="exp_company_5">GGF Getränke | Zürich</div>
+                </div>
+                <span class="timeline-date" data-i18n="exp_date_5">11/2018 – 09/2019</span>
+              </div>
+              <ul class="timeline-bullets">
+                <li data-i18n="exp_b5_1">Aufbau und Weiterentwicklung der E-Commerce-Infrastruktur durch Custom-Plugins
+                  und Themes.</li>
+                <li data-i18n="exp_b5_2">Nachweisbare Steigerung der Conversion Rate durch gezielte Datenanalyse und
+                  technische Shop-Optimierungen.</li>
+                <li data-i18n="exp_b5_3">Planung und Umsetzung des neuen Online-Shops inklusive Datenübernahme.</li>
+                <li data-i18n="exp_b5_4">Markt-, Website- und Wettbewerbsanalysen sowie Reichweitenmessung von Website,
+                  Newslettern und Shop; Steuerung externer Dienstleister.</li>
+              </ul>
+              <div class="timeline-tech-row">
+                <span class="timeline-tech-label" data-i18n="tech_stack_label">Tech-Stack:</span>
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">WooCommerce</span>
+                <span class="skill-tag">WordPress</span>
+                <span class="skill-tag">Social Media Marketing</span>
+                <span class="skill-tag">Web Analytics</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 6: Henninger IT / Freelance Start -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role" data-i18n="exp_role_6">Web-Developer & Designer (Freelance)</h3>
+                  <div class="timeline-company" data-i18n="exp_company_6">Selbstständig / für Henninger IT | Zürich
+                  </div>
+                </div>
+                <span class="timeline-date" data-i18n="exp_date_6">07/2012 – 12/2016</span>
+              </div>
+              <ul class="timeline-bullets">
+                <li data-i18n="exp_b6_1">Freelance-Tätigkeit: Webdesign, Grafikdesign und Webseiten-Entwicklung.</li>
+              </ul>
+              <div class="timeline-tech-row">
+                <span class="timeline-tech-label" data-i18n="tech_stack_label">Tech-Stack:</span>
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">WordPress</span>
+                <span class="skill-tag">HTML5 / CSS3 / SCSS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       SKILLS & TECH MATRIX
+       ======================================================================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="sec_skills_tag">Technologie-Stack</span>
+          <h2 class="section-title" data-i18n="sec_skills_title">Skills & Expertise</h2>
+          <p class="section-desc" data-i18n="sec_skills_desc">
+            Moderne Tools, Frameworks und Paradigmen, die ich in der täglichen Entwicklung einsetze.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- 1. Backend & Cloud -->
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <div class="skill-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+              <h3 class="skill-card-title" data-i18n="skill_cat_backend">Backend & Cloud</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight">C#</span>
+              <span class="skill-tag highlight">.NET 8 / Core</span>
+              <span class="skill-tag highlight">Entity Framework</span>
+              <span class="skill-tag highlight">Azure Functions</span>
+              <span class="skill-tag highlight">PHP</span>
+              <span class="skill-tag highlight">Node.js</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Google Cloud</span>
+            </div>
+          </div>
+
+          <!-- 2. Frontend & UI -->
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <div class="skill-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+              </div>
+              <h3 class="skill-card-title" data-i18n="skill_cat_frontend">Frontend & UI</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight">React</span>
+              <span class="skill-tag highlight">TypeScript</span>
+              <span class="skill-tag highlight">JavaScript (ES6+)</span>
+              <span class="skill-tag">HTML5 & Modern CSS</span>
+              <span class="skill-tag">SCSS / SASS</span>
+              <span class="skill-tag">Tailwind CSS</span>
+              <span class="skill-tag">Ionic Framework</span>
+              <span class="skill-tag">AngularJS</span>
+              <span class="skill-tag">Responsive Design</span>
+            </div>
+          </div>
+
+          <!-- 3. Databases -->
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <div class="skill-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+              <h3 class="skill-card-title" data-i18n="skill_cat_db">Datenbanken</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight">MSSQL</span>
+              <span class="skill-tag highlight">PostgreSQL</span>
+              <span class="skill-tag highlight">Supabase</span>
+              <span class="skill-tag">MySQL / MariaDB</span>
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">SQLite</span>
+              <span class="skill-tag">Query Optimization</span>
+            </div>
+          </div>
+
+          <!-- 4. DevOps, Tools & Workflows -->
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <div class="skill-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                  </path>
+                </svg>
+              </div>
+              <h3 class="skill-card-title" data-i18n="skill_cat_devops">DevOps, Tools & Workflows</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight">Docker</span>
+              <span class="skill-tag highlight">WSL2</span>
+              <span class="skill-tag highlight">Git (GitHub / Bitbucket)</span>
+              <span class="skill-tag">Jira & Confluence</span>
+              <span class="skill-tag">Visual Studio / VS Code</span>
+              <span class="skill-tag highlight">KI-Tools (Prompt Eng.)</span>
+              <span class="skill-tag">CI / CD Basics</span>
+              <span class="skill-tag">Code-Reviews & Doku</span>
+            </div>
+          </div>
+
+          <!-- 5. CMS & E-Commerce -->
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <div class="skill-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </div>
+              <h3 class="skill-card-title" data-i18n="skill_cat_cms">CMS & E-Commerce</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight">WordPress</span>
+              <span class="skill-tag highlight">WooCommerce</span>
+              <span class="skill-tag">Shopify</span>
+              <span class="skill-tag">ProcessWire</span>
+              <span class="skill-tag">Custom Plugin Dev</span>
+              <span class="skill-tag">Payment & Shipping APIs</span>
+            </div>
+          </div>
+
+          <!-- 6. Architecture & Methods -->
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <div class="skill-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <h3 class="skill-card-title" data-i18n="skill_cat_methodology">Architektur & Methoden</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight">Agile (Scrum)</span>
+              <span class="skill-tag highlight">Clean Architecture</span>
+              <span class="skill-tag highlight">REST API Design</span>
+              <span class="skill-tag">ETL & Data Scraping</span>
+              <span class="skill-tag">Cost & Speed Optimization</span>
+              <span class="skill-tag">System Reliability</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       EDUCATION & LANGUAGES
+       ======================================================================== -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="sec_edu_tag">Qualifikationen</span>
+          <h2 class="section-title" data-i18n="sec_edu_title">Ausbildung, Zertifikate & Sprachen</h2>
+          <p class="section-desc" data-i18n="sec_edu_desc">
+            Informatik-Grundlagen, stetige Weiterbildung und mehrsprachige Kommunikation.
+          </p>
+        </div>
+
+        <div class="edu-lang-grid">
+          <!-- Education Card -->
+          <div class="edu-card">
+            <h3 class="timeline-role" data-i18n="edu_title_card">Ausbildung & Zertifikate</h3>
+            <ul class="edu-list">
+              <li class="edu-item">
+                <div class="edu-title" data-i18n="edu_cert_1">Certified Javascript Developer</div>
+                <div class="edu-institution" data-i18n="edu_cert_1_org">W3Schools (2021)</div>
+              </li>
+              <li class="edu-item">
+                <div class="edu-title" data-i18n="edu_efz">Basislehrjahr Informatiker EFZ (1. Lehrjahr)</div>
+                <div class="edu-institution" data-i18n="edu_efz_org">Schweiz (2013 – 2014)</div>
+              </li>
+              <li class="edu-item">
+                <div class="edu-title" data-i18n="edu_cont">Kontinuierliche Weiterbildung & Selbststudium</div>
+                <p class="edu-institution" data-i18n="edu_cont_desc">
+                  Modernes .NET 8 / C#, React & TypeScript, Cloud-Architektur, Docker (Seit 2017) | KI-gestützte
+                  Entwicklung & Tools (Seit 2022)
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Languages & Interests Card -->
+          <div class="lang-card">
+            <h3 class="timeline-role" data-i18n="lang_title_card">Sprachen & Sonstiges</h3>
+            <ul class="lang-list">
+              <li class="lang-item">
+                <span class="lang-name" data-i18n="lang_de">Deutsch</span>
+                <span class="lang-level" data-i18n="lang_de_lvl">Muttersprache (C2)</span>
+              </li>
+              <li class="lang-item">
+                <span class="lang-name" data-i18n="lang_en">Englisch</span>
+                <span class="lang-level" data-i18n="lang_en_lvl">Verhandlungssicher (C1)</span>
+              </li>
+              <li class="lang-item">
+                <span class="lang-name" data-i18n="lang_es">Spanisch</span>
+                <span class="lang-level" data-i18n="lang_es_lvl">Zweite Muttersprache (Mündlich C2 / Schriftlich
+                  B2)</span>
+              </li>
+            </ul>
+
+            <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+              <p style="font-size: 0.92rem; color: var(--text-muted);" data-i18n="other_info">
+                Führerschein: Kat. B, A1 | Hobbys: Fussball, Reisen, Software-Entwicklung
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       CONTACT & FOOTER
+       ======================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="sec_contact_tag">Kontakt</span>
+          <h2 class="section-title" data-i18n="sec_contact_title">In Kontakt treten</h2>
+          <p class="section-desc" data-i18n="sec_contact_desc">
+            Interesse an einer Zusammenarbeit oder einer spannenden Festanstellung? Ich freue mich auf Ihre Nachricht
+            via LinkedIn.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Location Card -->
+          <div class="contact-card">
+            <div class="contact-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="contact-label" data-i18n="contact_location_label">Standort</div>
+            <div class="contact-value" data-i18n="contact_location_val">Schlieren / Zürich, Schweiz</div>
+            <span class="tech-pill" data-i18n="contact_location_pill">Wohnhaft in der Schweiz</span>
+          </div>
+
+          <!-- LinkedIn Card (primary contact channel) -->
+          <div class="contact-card contact-card-primary">
+            <div class="contact-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </div>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">Adrian Steger</div>
+            <a href="https://www.linkedin.com/in/adrian-steger" target="_blank" rel="noopener noreferrer"
+              class="btn btn-primary contact-action">
+              <span data-i18n="contact_linkedin_btn">Nachricht auf LinkedIn senden</span>
+            </a>
+          </div>
+
+          <!-- GitHub Card -->
+          <div class="contact-card">
+            <div class="contact-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+            </div>
+            <div class="contact-label">GitHub</div>
+            <div class="contact-value">adriansteger</div>
+            <a href="https://github.com/adriansteger" target="_blank" rel="noopener noreferrer"
+              class="btn btn-secondary contact-action">
+              <span data-i18n="contact_github_btn">Profil ansehen</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-copy" data-i18n="footer_text">
+        © 2026 Adrian Steger. Entwickelt mit modernem Vanilla HTML5, CSS3 & JavaScript.
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/adriansteger" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+          </svg>
+          <span>github.com/adriansteger</span>
+        </a>
+        <a href="https://www.linkedin.com/in/adrian-steger" target="_blank" rel="noopener noreferrer"
+          class="social-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic -->
+  <script src="assets/js/app.js"></script>
 </body>
 
 </html>

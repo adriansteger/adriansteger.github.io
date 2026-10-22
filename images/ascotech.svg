@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400">
+  <!-- Abstract illustration: ETL pipeline (extract raw records -> transform -> load into database / shop) -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#111c33"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#a855f7" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="640" height="400" rx="18" fill="url(#bg)"/>
+  <g stroke="#ffffff" stroke-opacity="0.04">
+    <path d="M0 80H640M0 160H640M0 240H640M0 320H640M80 0V400M160 0V400M240 0V400M320 0V400M400 0V400M480 0V400M560 0V400"/>
+  </g>
+
+  <!-- Extract: scattered raw records -->
+  <g fill="#1e293b" stroke="#ffffff" stroke-opacity="0.1">
+    <rect x="44" y="92" width="96" height="22" rx="6" transform="rotate(-6 92 103)"/>
+    <rect x="60" y="134" width="84" height="22" rx="6" transform="rotate(4 102 145)"/>
+    <rect x="40" y="176" width="104" height="22" rx="6" transform="rotate(-3 92 187)"/>
+    <rect x="56" y="218" width="90" height="22" rx="6" transform="rotate(5 101 229)"/>
+    <rect x="46" y="260" width="98" height="22" rx="6" transform="rotate(-5 95 271)"/>
+  </g>
+  <g fill="#94a3b8" fill-opacity="0.4">
+    <rect x="56" y="100" width="40" height="5" rx="2.5" transform="rotate(-6 92 103)"/>
+    <rect x="72" y="142" width="30" height="5" rx="2.5" transform="rotate(4 102 145)"/>
+    <rect x="52" y="184" width="50" height="5" rx="2.5" transform="rotate(-3 92 187)"/>
+    <rect x="68" y="226" width="36" height="5" rx="2.5" transform="rotate(5 101 229)"/>
+    <rect x="58" y="268" width="44" height="5" rx="2.5" transform="rotate(-5 95 271)"/>
+  </g>
+
+  <!-- Funnel into transform -->
+  <path d="M160 96 L 240 170 L 240 230 L 160 304" fill="none" stroke="url(#brand)" stroke-width="2" stroke-opacity="0.6" stroke-dasharray="4 6"/>
+
+  <!-- Transform: gear -->
+  <circle cx="300" cy="200" r="100" fill="url(#glow)"/>
+  <g transform="translate(300 200)">
+    <g fill="#1e293b" stroke="url(#brand)" stroke-width="2.5">
+      <path d="M-9 -58 h18 l3 14 a46 46 0 0 1 12 5 l12 -8 l13 13 l-8 12 a46 46 0 0 1 5 12 l14 3 v18 l-14 3 a46 46 0 0 1 -5 12 l8 12 l-13 13 l-12 -8 a46 46 0 0 1 -12 5 l-3 14 h-18 l-3 -14 a46 46 0 0 1 -12 -5 l-12 8 l-13 -13 l8 -12 a46 46 0 0 1 -5 -12 l-14 -3 v-18 l14 -3 a46 46 0 0 1 5 -12 l-8 -12 l13 -13 l12 8 a46 46 0 0 1 12 -5 z"/>
+    </g>
+    <circle r="18" fill="#0f172a" stroke="#a5b4fc" stroke-width="3"/>
+  </g>
+
+  <!-- Normalized output rows -->
+  <g>
+    <path d="M362 200 H 404" stroke="url(#brand)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M396 192 l10 8 l-10 8" fill="none" stroke="#06b6d4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <rect x="420" y="128" width="96" height="144" rx="12" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08"/>
+    <g fill="#06b6d4" fill-opacity="0.55">
+      <rect x="434" y="144" width="16" height="8" rx="3"/>
+      <rect x="434" y="166" width="16" height="8" rx="3"/>
+      <rect x="434" y="188" width="16" height="8" rx="3"/>
+      <rect x="434" y="210" width="16" height="8" rx="3"/>
+      <rect x="434" y="232" width="16" height="8" rx="3"/>
+    </g>
+    <g fill="#cbd5e1" fill-opacity="0.45">
+      <rect x="458" y="145" width="44" height="6" rx="3"/>
+      <rect x="458" y="167" width="44" height="6" rx="3"/>
+      <rect x="458" y="189" width="44" height="6" rx="3"/>
+      <rect x="458" y="211" width="44" height="6" rx="3"/>
+      <rect x="458" y="233" width="44" height="6" rx="3"/>
+    </g>
+  </g>
+
+  <!-- Load: database -->
+  <path d="M516 200 H 540" stroke="url(#brand)" stroke-width="3" stroke-linecap="round"/>
+  <g transform="translate(572 200)" stroke="#10b981" stroke-width="2.5" fill="#1e293b">
+    <path d="M-28 -36 v72 a28 9 0 0 0 56 0 v-72"/>
+    <ellipse cx="0" cy="-36" rx="28" ry="9"/>
+    <path d="M-28 -12 a28 9 0 0 0 56 0 M-28 12 a28 9 0 0 0 56 0" fill="none"/>
+  </g>
+</svg>
