@@ -1301,6 +1301,131 @@ button:focus-visible {
 }
 
 /* ==========================================================================
+   THREE.JS SCENES & MOTION EFFECTS
+   ========================================================================== */
+/* Fixed WebGL particle background behind all content */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+#bg-canvas.is-ready {
+  opacity: 1;
+}
+
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Glass cards so the particles shimmer through */
+.skill-card,
+.sec-project-card,
+.edu-card,
+.lang-card,
+.contact-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Skill Globe */
+.skill-globe {
+  display: none;
+  position: relative;
+  height: 440px;
+  max-width: 760px;
+  margin: -10px auto 40px;
+}
+
+.skill-globe.is-ready {
+  display: block;
+}
+
+.skill-globe::before {
+  content: '';
+  position: absolute;
+  inset: 12% 22%;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--bg-radial-1) 0%, var(--bg-radial-2) 45%, transparent 70%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.skill-globe canvas {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.skill-globe canvas:active {
+  cursor: grabbing;
+}
+
+.skill-globe-hint {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  pointer-events: none;
+}
+
+/* Skill tag linked to the label hovered on the globe */
+.skill-tag.is-linked {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #ffffff;
+  box-shadow: var(--glow-indigo);
+  transform: translateY(-2px);
+}
+
+/* Card tilt spotlight (class added by app.js) */
+.tilt {
+  position: relative;
+}
+
+.tilt::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(480px circle at var(--mx, 50%) var(--my, 50%), rgba(99, 102, 241, 0.14), transparent 45%);
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+}
+
+.tilt:hover::after {
+  opacity: 1;
+}
+
+/* Scroll reveal (classes added and removed by app.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ==========================================================================
    RESPONSIVE DESIGN (MEDIA QUERIES)
    ========================================================================== */
 @media (max-width: 1024px) {
@@ -1412,6 +1537,11 @@ button:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  .skill-globe {
+    height: 340px;
+    margin-bottom: 28px;
+  }
+
   .project-media {
     padding: 20px 16px;
   }
@@ -1423,6 +1553,16 @@ button:focus-visible {
   .footer-content {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-badge {
+    display: none;
+  }
+
+  .brand-logo {
+    white-space: nowrap;
   }
 }
 

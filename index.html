@@ -51,6 +51,9 @@
 
   <a href="#main-content" class="skip-link" data-i18n="skip_link">Zum Inhalt springen</a>
 
+  <!-- Three.js particle background (assets/js/scene.js) -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
   <!-- ========================================================================
        SITE HEADER / NAVIGATION
        ======================================================================== -->
@@ -714,6 +717,14 @@
           </p>
         </div>
 
+        <!-- Interactive 3D skill globe (assets/js/skill-globe.js) -->
+        <div class="skill-globe" id="skill-globe">
+          <canvas aria-hidden="true"></canvas>
+          <p class="skill-globe-hint" data-i18n="skills_globe_hint">
+            Globus ziehen zum Drehen – oder mit der Maus über einen Skill unten fahren
+          </p>
+        </div>
+
         <div class="skills-grid">
           <!-- 1. Backend & Cloud -->
           <div class="skill-card">
@@ -996,7 +1007,7 @@
   <footer class="site-footer">
     <div class="container footer-content">
       <div class="footer-copy" data-i18n="footer_text">
-        © 2026 Adrian Steger. Entwickelt mit modernem Vanilla HTML5, CSS3 & JavaScript.
+        © 2026 Adrian Steger. Entwickelt mit Vanilla HTML5, CSS3, JavaScript & Three.js.
       </div>
       <div class="footer-socials">
         <a href="https://github.com/adriansteger" target="_blank" rel="noopener noreferrer" class="social-link">
@@ -1020,6 +1031,10 @@
 
   <!-- Application Logic -->
   <script src="assets/js/app.js"></script>
+
+  <!-- 3D Scenes (Three.js via CDN, ES modules) -->
+  <script type="module" src="assets/js/scene.js"></script>
+  <script type="module" src="assets/js/skill-globe.js"></script>
 </body>
 
 </html>

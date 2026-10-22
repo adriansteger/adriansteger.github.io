@@ -147,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skill_cat_devops: 'DevOps, Tools & Workflows',
       skill_cat_cms: 'CMS & E-Commerce',
       skill_cat_methodology: 'Architektur & Methoden',
+      skills_globe_hint: 'Globus ziehen zum Drehen – oder mit der Maus über einen Skill unten fahren',
 
       // Education & Languages
       edu_title_card: 'Ausbildung & Zertifikate',
@@ -173,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
       contact_linkedin_btn: 'Nachricht auf LinkedIn senden',
       contact_github_btn: 'Profil ansehen',
 
-      footer_text: '© 2026 Adrian Steger. Entwickelt mit modernem Vanilla HTML5, CSS3 & JavaScript.'
+      footer_text: '© 2026 Adrian Steger. Entwickelt mit Vanilla HTML5, CSS3, JavaScript & Three.js.'
     },
 
     en: {
@@ -317,6 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skill_cat_devops: 'DevOps, Tools & Workflows',
       skill_cat_cms: 'CMS & E-Commerce',
       skill_cat_methodology: 'Architecture & Methods',
+      skills_globe_hint: 'Drag the globe to spin it – or hover a skill below',
 
       // Education & Languages
       edu_title_card: 'Education & Certifications',
@@ -343,7 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
       contact_linkedin_btn: 'Message me on LinkedIn',
       contact_github_btn: 'View profile',
 
-      footer_text: '© 2026 Adrian Steger. Engineered with pure Vanilla HTML5, CSS3 & JavaScript.'
+      footer_text: '© 2026 Adrian Steger. Engineered with Vanilla HTML5, CSS3, JavaScript & Three.js.'
     }
   };
 
@@ -491,6 +493,84 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { rootMargin: '-45% 0px -50% 0px' });
 
     sections.forEach(section => observer.observe(section));
+  }
+
+  // --- Motion Effects (skipped for reduced motion) ---
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  // 3D tilt with a cursor-following spotlight on cards
+  if (!reduceMotion && finePointer) {
+    document.querySelectorAll('.project-card, .skill-card, .metric-card, .contact-card, .sec-project-card, .timeline-card').forEach(card => {
+      card.classList.add('tilt');
+      const maxTilt = card.classList.contains('project-card') || card.classList.contains('timeline-card') ? 3 : 7;
+
+      card.addEventListener('pointermove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+        card.style.setProperty('--mx', `${x * 100}%`);
+        card.style.setProperty('--my', `${y * 100}%`);
+        card.style.transition = 'transform 0.12s ease-out, border-color 0.3s, box-shadow 0.3s';
+        card.style.transform = `perspective(1000px) rotateX(${(0.5 - y) * maxTilt}deg) rotateY(${(x - 0.5) * maxTilt}deg) translateY(-4px)`;
+      });
+
+      card.addEventListener('pointerleave', () => {
+        card.style.transition = '';
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // Scroll reveal: fade cards in as they enter the viewport
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const revealEls = document.querySelectorAll('.section-header, .project-card, .sec-project-card, .timeline-item, .skill-card, .edu-card, .lang-card, .contact-card, .metric-card');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        revealObserver.unobserve(el);
+        el.classList.add('is-visible');
+        // Drop the reveal classes afterwards so the cards' own hover transitions apply again
+        setTimeout(() => el.classList.remove('reveal', 'is-visible'), 900 + (parseFloat(el.style.getPropertyValue('--reveal-delay')) || 0) * 1000);
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+
+    revealEls.forEach(el => {
+      // Stagger siblings inside the same grid
+      const siblings = [...el.parentElement.children].filter(c => c.matches(el.tagName.toLowerCase() + '.' + el.classList[0]));
+      el.style.setProperty('--reveal-delay', `${Math.min(siblings.indexOf(el), 5) * 0.08}s`);
+      el.classList.add('reveal');
+      revealObserver.observe(el);
+    });
+  }
+
+  // Count up impact metrics ("12+", "-22%", "6k+") when they come into view
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        countObserver.unobserve(entry.target);
+        const el = entry.target;
+        const final = el.textContent;
+        const match = final.match(/^(-?)(\d+)(.*)$/);
+        if (!match) return;
+        const target = parseInt(match[2], 10);
+        const start = performance.now();
+        const duration = 1400;
+
+        const step = (now) => {
+          const t = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = t < 1 ? `${match[1]}${Math.round(target * eased)}${match[3]}` : final;
+          if (t < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.6 });
+
+    document.querySelectorAll('.metric-number').forEach(el => countObserver.observe(el));
   }
 
   // --- Initialize Initial Theme & Language ---
